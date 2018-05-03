@@ -1,7 +1,7 @@
 package inputOutput;
 
 public class Tool {
-
+	// create attribute for the tool
 	private double coordinate_x, coordinate_y, coordinate_z;
 
 	private double rotation_x, rotation_y, rotation_z, rotation_r;
@@ -11,7 +11,7 @@ public class Tool {
 	private double timestamp;
 
 	private String name;
-
+	
 	public Tool(double timestamp, double valid, double coordinate_x, double coordinate_y, double coordinate_z,
 			double rotation_x, double rotation_y, double rotation_z, double rotation_r, String name) {
 
