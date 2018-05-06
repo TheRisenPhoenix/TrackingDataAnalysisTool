@@ -9,11 +9,14 @@ public class DataService {
 	
 	}
 	
-	public void loadNextData() {}
-	
-	public void getAverageMeasurement() {
-	 
+	public void loadNextData() {
+		
+		this.dataManager.getNextData();
+		
+		
 	}
+	
+	public void getAverageMeasurement() {}
 	
 	public void getJitter() {}
 	
