@@ -19,7 +19,7 @@ public class CSVFileReaderTest {
 	@Test
 	public void updateTest() throws IOException {
 
-		Path path = Paths.get("Q:/logfile_neu.csv");
+		Path path = Paths.get("C:/Users/Michael/Desktop/logfile_neu.csv");
 
 		Tool testtool1 = new Tool();
 		testtool1.setData(188138.0, 1.0, 73.5664539062506, 75.3365062500002,

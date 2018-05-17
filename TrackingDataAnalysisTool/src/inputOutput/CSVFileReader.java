@@ -36,6 +36,7 @@ public class CSVFileReader extends Interface {
 
 	private static void init() throws IOException {
 
+		
 		readline();
 		// find the number of the tools
 		number_of_tools = (data.length) / 9;
@@ -55,6 +56,7 @@ public class CSVFileReader extends Interface {
 		// decrease line_counter because next line has to be read
 		line_counter++;
 		read();
+		
 	}
 
 	private static void read() throws IOException {
@@ -86,6 +88,7 @@ public class CSVFileReader extends Interface {
 			toollist.get(0).setCoordinate_X(-100000);
 
 		}
+
 	}
 
 	private static void readline() {
@@ -118,6 +121,8 @@ public class CSVFileReader extends Interface {
 		}
 
 	}
+
+	
 
 	private static void getName(String csv_name, int index_name) {
 		// find the tool name with the splitted timestamp name
