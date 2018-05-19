@@ -14,13 +14,13 @@ import inputOutput.Tool;
 
 public class CSVFileReaderTest {
 
-	ArrayList<Tool> testlist = new ArrayList<Tool>();
+	static ArrayList<Tool> testlist = new ArrayList<Tool>();
 
 	@Test
-	public void updateTest() throws IOException {
+	public static void updateTest() throws IOException {
 
-		String path = "Q:/logfile_neu.csv";
-		CSVFileReader.setPath(path);
+		// String path = "Q:/logfile_neu.csv";
+		// CSVFileReader.setPath(path);
 
 		Tool testtool1 = new Tool();
 		testtool1.setData(188138.0, 1.0, 73.5664539062506, 75.3365062500002,
@@ -49,10 +49,11 @@ public class CSVFileReaderTest {
 
 		// test too3 correct import
 		assertEquals(true, testequality(testtool3, 2));
+		System.out.println("Geht alles");
 
 	}
 
-	private boolean testequality(Tool testtool, int index) {
+	private static boolean testequality(Tool testtool, int index) {
 		boolean test = false;
 		boolean helptest = true;
 
