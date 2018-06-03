@@ -1,3 +1,5 @@
+package algorithm;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -6,25 +8,25 @@ import inputOutput.Tool;
 
 public class DataManager {
 	List<ToolMeasure> toolMeasures;
-	int countToGetNext;
 	
-	//Constructor
-	public DataManager (int countToGetNext) {
-		this.countToGetNext = countToGetNext;
+	public List<ToolMeasure> getToolMeasures(){
+		return toolMeasures;
 	}
 	
-	public void getNextData (int countToGetNext) {
+	public List<ToolMeasure> getNextData (int countToGetNext) {
 		
 		for(double i = 0; i< countToGetNext; i++) {
 		//aus rückgabe von update neue messung erstellen
 		List<Tool> tools = new ArrayList<>();
 		
 			for(Tool tool : tools) {
-//				Measurement measurement = new Measurement(tool);
-//				addMeasurementToTool(measurement);
+				Measurement measurement = new Measurement(tool);
+				addMeasurementToTool(measurement);
 			}
 		
 		}
+		
+		return toolMeasures;
 	} 
 	
 	private void addMeasurementToTool(Measurement measurement) {
