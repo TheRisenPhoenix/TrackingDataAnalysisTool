@@ -66,6 +66,27 @@ public class AlgorithmTest {
 		assertTrue(result == 0);
 	}
 
+	@Test
+	public void getRotationJitterIsCorrect() {
+		setUpData();
+
+		RotationError result = processor.getRotationJitter(testTool.getMeasurement(),
+				testTool.getAverageMeasurement().getRotation());
+
+		assertTrue(result.getRotationAngleError() == 0.11271591504667608);
+		assertTrue(result.getRotationPositionError() == 0.11271591504667536);
+
+	}
+
+	// public void loadNextDataIsCorrect() {
+
+	// int countToGetNext = 3;
+	// setupData();
+
+	// List <ToolMeasure> result = dataManager.getNextData(countToGetNext);
+	// assertTrue(result.size() > 0 9);
+	// }
+
 	private void setUpDataAccuracy() {
 		processor = new DataProcessor();
 
@@ -82,15 +103,6 @@ public class AlgorithmTest {
 		firstAverangeMeasurement.setRotation(r1);
 		secondAverangeMeasurement.setRotation(r2);
 	}
-	
-	//public void loadNextDataIsCorrect() {
-	
-	// int countToGetNext = 3;
-	// setupData();
-	
-	// List <ToolMeasure> result = dataManager.getNextData(countToGetNext);
-	// assertTrue(result.size() > 0 9);
-	//}
 
 	private void setUpData() {
 
@@ -125,22 +137,9 @@ public class AlgorithmTest {
 		testTool.addMeasurement(measurement3);
 
 		testTool.setAverageMeasurement(avgM);
-		
+
 		// dataManager = new DataManager();
 
 	}
-	
-	@Test
-	public void getRotationJitterIsCorrect() {
-		setUpData();
-
-		RotationError result = processor.getRotationJitter(testTool.getMeasurement(),
-				testTool.getAverageMeasurement().getRotation());
-
-		assertTrue(result.getRotationAngleError() == 0.11271591504667608);
-		assertTrue(result.getRotationPositionError() == 0.11271591504667536);
-
-	}
-
 
 }
