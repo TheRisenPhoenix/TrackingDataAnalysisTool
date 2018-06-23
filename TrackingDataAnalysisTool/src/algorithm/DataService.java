@@ -10,7 +10,7 @@ public class DataService {
 		dataManager = new DataManager();
 		dataProcessor = new DataProcessor();
 	}
-
+//holt ToolbyName, sucht dieses, wenn es nicht vorhanden ist Exception
 	public ToolMeasure getToolByName(String Name) throws Exception {
 		for (ToolMeasure toolMeasure : dataManager.getToolMeasures()) {
 			if (toolMeasure.getName().equals(Name)) {
@@ -20,6 +20,7 @@ public class DataService {
 		throw new Exception("Tool not found: " + Name);
 	}
 
+	//ruft getNextData auf, ruft berechnung auf, holt Messung von Tool, erstellt Liste von Messungen, Durchschnittsmessung berechnet, aus dieser andere Berechnungen, Liste von Tools wird zurückgegeben
 	public List<ToolMeasure> loadNextData(int countToGetNext) {
 		dataManager.getNextData(countToGetNext);
 
@@ -39,6 +40,7 @@ public class DataService {
 		return dataManager.getToolMeasures();
 	}
 
+	//ruft Methode getAccuracy aus DataProcessor auf, Korrektheit von Position wird berechnet
 	public double getAccuracy(double expectedDistance, AverageMeasurement firstAverangeMeasurement,
 			AverageMeasurement secondAverangeMeasurement) {
 		return dataProcessor.getAccuracy(expectedDistance, firstAverangeMeasurement, secondAverangeMeasurement);
