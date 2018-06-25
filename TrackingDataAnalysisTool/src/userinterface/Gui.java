@@ -30,11 +30,11 @@ import javax.swing.JFrame;
 import javax.swing.filechooser.FileFilter;
 import java.net.*;
 import inputOutput.*; 
-import testInputOutput.*;
+//import testInputOutput.*;
 
 
 public class Gui extends JFrame implements ActionListener{
-	
+	// Declarations of Buttons for measurements, loading data, compute:
 	private JButton start = new JButton("Start Measurement");
 	private JButton finish = new JButton("End Measurement");
 	private JButton start2 = new JButton("Start 2.Measurement");
@@ -44,22 +44,29 @@ public class Gui extends JFrame implements ActionListener{
 	private JButton openIGTB = new JButton("Connect");
 	private JButton loadTool = new JButton("Tool");
 	
+	// Textfield for data source to load CSV- data:
 	private JTextField adresse= new JTextField(25); 
 	private JTextField ValueData = new JTextField(15);
 	
+	// choose measurement:
 	private String[] messungen = {"Rauschen", "Correctness"}; 
 	private JComboBox measurementtyp = new JComboBox(messungen);
+	
+	// Checkbox for Jitter, correctness, accuracy, rotation
 	private JCheckBox cBJitterP = new JCheckBox("Jitterposition", false);
 	private JCheckBox cBJitterR = new JCheckBox("Jitterrotation", false);
 	private JCheckBox cBCorrectnessR = new JCheckBox("Accuracy-Rotation", false);
 	private JCheckBox cBCorrectnessP = new JCheckBox("Accuracy-Position", false);
 	
+	//Label
 	private  JLabel LabelDataValue = new JLabel(); private  JLabel openITGL = new JLabel(); 
 	private JLabel lValue = new JLabel(); private JLabel lCalcJR = new JLabel();  
 	private JLabel lCalcC = new JLabel(); private JLabel lCalcJP = new JLabel();  
 	
+	// Jfile Chooser
 	private JMenuBar bar; private  JMenu menu ;private JMenuItem openItem; private JMenuItem closeItem;
 	
+	//Textfield, Label
 	private JTextField toLoadField = new JTextField(5); private  JLabel toLoad = new JLabel();
 	private JTextField distanceF = new JTextField(5); private  JLabel distance = new JLabel();
 	private JTextField rotationAngel = new JTextField(5); private JLabel rotationL = new JLabel();
@@ -67,8 +74,8 @@ public class Gui extends JFrame implements ActionListener{
 	
 	TextField positionJitter = new TextField();
 	File f; String valueP, valueD, valueR, valueL ;  
-	//double correctness, accuracy, jitterR, jitterP;
-	
+
+	// list for available tools
 	private final java.awt.List toolList = new java.awt.List(); 
 	private final Label label2 = new Label("Available Tools");
 	
@@ -85,11 +92,11 @@ public class Gui extends JFrame implements ActionListener{
 	}
 	
 	private void init(){
-		
+		// register for searching OITG or CSV
 		JTabbedPane tabbedPane = new JTabbedPane();
 		panel1 = new JPanel();
 		panel2 = new JPanel();
-		tabbedPane.addTab("CSV", panel1);
+		tabbedPane.addTab("CSV", panel1); 
 		tabbedPane.addTab("ITG", panel2 );
 		tabbedPane.setMnemonicAt(0, KeyEvent.VK_1);
 		tabbedPane.setMnemonicAt(1, KeyEvent.VK_2);
@@ -105,7 +112,7 @@ public class Gui extends JFrame implements ActionListener{
 	    bar.setBounds(5, 20, 120, 20);
 	    panel1.add(bar);
 	    
-	 	JLabel l0 = new JLabel(" CSV-Datafile:");
+	 	JLabel l0 = new JLabel(" CSV-Datafile:"); // Label for CSV file path
 	 	l0.setBounds(20, 40, 120, 20);
 	 	panel1.add(l0); 
 	 	adresse.setBounds(210, 40, 250, 20);
@@ -113,26 +120,26 @@ public class Gui extends JFrame implements ActionListener{
 	 	loadData.setBounds(460, 40, 120, 20);
 	 	panel1.add(loadData);
 	 	
-	 	toLoad.setText("Number of files to load");
+	 	toLoad.setText("Number of files to load"); // number of files to load
 	 	toLoad.setBounds(20, 140, 180, 25);
 		panel1.add(toLoad);
 		toLoadField.setBounds(210, 140, 180, 20);
 		panel1.add("n", toLoadField);
 	 
 		
-		distance.setText("Distant indication");
+		distance.setText("Distant indication"); // distance indication
 		distance.setBounds(20, 240, 130, 20);
 		panel1.add(distance);
 		distanceF.setBounds(210, 240, 180, 20);
 		panel1.add(distanceF);
 		
-		rotationL.setText("Angel indication");
+		rotationL.setText("Angel indication"); // corner
 		rotationL.setBounds(20, 340, 170, 20);
 		panel1.add(rotationL);
 		rotationAngel.setBounds(210,340, 180, 20);
 		panel1.add(rotationAngel);
 		
-		openITGL.setText("Online IGT-Link");
+		openITGL.setText("Online IGT-Link"); // Label for connection to openIGTB
 		openITGL.setBounds(40, 120, 170, 20);
 		panel2.add(openITGL);
 	 	openIGTf.setBounds(120, 120, 120, 20);
@@ -142,23 +149,22 @@ public class Gui extends JFrame implements ActionListener{
 		openIGTB.setBounds(250, 120, 120, 25);
 		panel2.add(openIGTB); 
 		
-		JLabel measuredTyp = new JLabel("Measurementtyp"); 
+		JLabel measuredTyp = new JLabel("Measurementtyp"); //measuredtyp
 		measuredTyp.setBounds(650, 100, 120, 60);
 		panel1.add(measuredTyp);
 		measurementtyp.setBounds(800, 100, 120, 20);
 		panel1.add(measurementtyp); 
-		start.setBounds(650, 170, 160, 60);
+		start.setBounds(650, 170, 160, 60); // setbounds for position
 		panel1.add(start);
-		start.setForeground(Color.GREEN);
+		start.setForeground(Color.GREEN); // set button "start" green
 		finish.setBounds(815, 170, 150, 60);
 		panel1.add(finish);
-		finish.setForeground(Color.RED);
+		finish.setForeground(Color.RED); // set button "finish" red
 		
-		//cBRotation.setBounds(650, 470, 120, 60);
+	
 		//panel1.add(cBRotation);
 		cBJitterR.setBounds(650, 400, 150, 30);
 		panel1.add(cBJitterR);
-		//cBJitterR.setEnabled(false);
 		cBJitterP.setBounds(650, 420, 150, 30);
 		panel1.add(cBJitterP);
 		//cBJitterP.setEnabled(false);
@@ -166,7 +172,7 @@ public class Gui extends JFrame implements ActionListener{
 		panel1.add(cBCorrectnessR);
 		cBCorrectnessP.setBounds(650, 460, 150, 30);
 		panel1.add(cBCorrectnessP);
-		calculate.setBounds(800, 400, 130, 60);
+		calculate.setBounds(800, 400, 130, 60); // set bounds for calculate
 		panel1.add(calculate);
 		
 		toolList.setBounds(20, 700, 120, 80);
@@ -195,7 +201,7 @@ public class Gui extends JFrame implements ActionListener{
 		
 		panel1.setLayout(null);
 		this.setLayout(new BorderLayout());
-		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
+		this.setDefaultCloseOperation(EXIT_ON_CLOSE); // for closing
 		this.getContentPane();
 		this.add(tabbedPane);
 	
