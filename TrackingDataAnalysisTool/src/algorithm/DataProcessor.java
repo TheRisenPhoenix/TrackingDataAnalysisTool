@@ -5,7 +5,6 @@ import java.util.Collections;
 import java.util.List;
 import javafx.geometry.Point3D;
 import org.apache.commons.math3.stat.descriptive.rank.Percentile;
-
 import com.jme3.math.Quaternion;
 
 /** This class provides the methods for processing the measurements. */
