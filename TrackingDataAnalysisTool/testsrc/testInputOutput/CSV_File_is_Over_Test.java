@@ -20,7 +20,9 @@ public class CSV_File_is_Over_Test {
 	@Test
 	public void updateTest() throws IOException {
 
-		String path = "Q:/logfile_neu.csv";
+		inputOutput.CSVFileReader.setLine_counter();
+		
+		String path = "C:\\Users\\Michael\\Desktop\\logfile_neu.csv";
 		CSVFileReader.setPath(path);
 	
 

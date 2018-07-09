@@ -353,7 +353,7 @@ public class Gui extends JFrame implements ActionListener {
 				value = true;
 				begin.setExit(false);
 				data.setCount();
-				testInputOutput.Networkconnection_test_app.setCount();
+				TestAppforOpenIGTLink.Networkconnection_test_app.setCount();
 			}
 
 			// if mesurementtyp pressed

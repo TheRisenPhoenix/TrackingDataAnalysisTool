@@ -4,7 +4,7 @@ import java.io.*;
 import java.nio.file.Path;
 import java.util.ArrayList;
 
-import testInputOutput.Exception_Window;
+import TestAppforOpenIGTLink.Exception_Window;
 import userinterface.Gui;
 
 /**
@@ -194,6 +194,7 @@ public class CSVFileReader {
 		}
 	public static void setLine_counter() {
 		line_counter=0;
+		exception_number=0;
 		toollist.clear();
 	}
 }

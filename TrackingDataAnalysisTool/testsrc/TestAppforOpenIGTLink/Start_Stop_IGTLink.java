@@ -1,4 +1,4 @@
-package testInputOutput;
+package TestAppforOpenIGTLink;
 
 import inputOutput.Networkconnection;
 import inputOutput.OpenIGTLinkConnection;
@@ -92,7 +92,7 @@ public class Start_Stop_IGTLink extends JFrame implements ActionListener {
 
 			if (testapp == true) {
 
-				testInputOutput.Networkconnection_test_app.setCount();
+				TestAppforOpenIGTLink.Networkconnection_test_app.setCount();
 			}
 		}
 
@@ -105,7 +105,7 @@ public class Start_Stop_IGTLink extends JFrame implements ActionListener {
 			begin.setExit(false);
 
 			data.setCount();
-			testInputOutput.Networkconnection_test_app.setCount();
+			TestAppforOpenIGTLink.Networkconnection_test_app.setCount();
 		}
 	}
 

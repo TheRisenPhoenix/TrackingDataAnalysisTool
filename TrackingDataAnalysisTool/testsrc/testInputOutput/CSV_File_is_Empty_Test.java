@@ -20,7 +20,9 @@ public class CSV_File_is_Empty_Test {
 	@Test
 	public void updateTest() throws IOException {
 
-		String path = "Q:/logfile_empty.csv";
+		inputOutput.CSVFileReader.setLine_counter();
+		
+		String path = "C:\\Users\\Michael\\Desktop\\lo.csv";
 		CSVFileReader.setPath(path);
 	
 

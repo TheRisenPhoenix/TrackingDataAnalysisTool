@@ -39,7 +39,7 @@ public class ExceptionData {
 			ExceptionWindow.setExceptionText("Data was not found");
 			
 			break;
-		default: testInputOutput.Exception_Window.startExceptionWindow();
+		default: TestAppforOpenIGTLink.Exception_Window.startExceptionWindow();
 
 		}
 

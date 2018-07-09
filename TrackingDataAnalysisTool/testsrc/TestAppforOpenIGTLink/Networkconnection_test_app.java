@@ -1,4 +1,4 @@
-package testInputOutput;
+package TestAppforOpenIGTLink;
 
 import static org.junit.Assert.*;
 

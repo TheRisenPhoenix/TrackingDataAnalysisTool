@@ -1,4 +1,4 @@
-package testInputOutput;
+package TestAppforOpenIGTLink;
 
 import java.awt.*;
 import java.awt.event.*;

@@ -18,8 +18,10 @@ public class CSV_File_was_not_found {
 
 	@Test
 	public void updateTest() throws IOException {
+		
+		inputOutput.CSVFileReader.setLine_counter();
 
-		String path = "Q:/logfile_neu.csv";
+		String path = "C:\\Users\\Michael\\Desktop\\logf.csv";
 		CSVFileReader.setPath(path);
 
 		

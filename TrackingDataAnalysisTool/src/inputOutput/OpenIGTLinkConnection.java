@@ -87,7 +87,7 @@ public class OpenIGTLinkConnection {
 
 			// call method to get output in console
 			if (testapp == true) {
-				testInputOutput.Networkconnection_test_app
+				TestAppforOpenIGTLink.Networkconnection_test_app
 						.setTestlist(toollist);
 			}
 

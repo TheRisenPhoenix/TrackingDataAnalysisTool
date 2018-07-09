@@ -18,8 +18,10 @@ public class CSVFileReaderTest {
 
 	@Test
 	public void updateTest() throws IOException {
+		
+		inputOutput.CSVFileReader.setLine_counter();
 
-		String path = "Q:/logfile_neu.csv";
+		String path = "C:\\Users\\Michael\\Desktop\\logfile_neu.csv";
 		CSVFileReader.setPath(path);
 
 		Tool testtool1 = new Tool();
